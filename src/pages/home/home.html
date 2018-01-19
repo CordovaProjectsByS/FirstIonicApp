@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      Twoje imie to:
+    </ion-card-header>
+    <ion-card-content [hidden]="!fullName">
+      <ion-icon name="sunny"></ion-icon>
+      <span>{{ fullName }}</span> 
+      <ion-icon name="sunny"></ion-icon>
+    </ion-card-content>
+  </ion-card>
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-input placeholder="Imie" type="text" [(ngModel)]="firstName" name="firstName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Nazwisko" [(ngModel)]="secondName" name="secondName"></ion-input>
+      </ion-item>
+    </ion-list>
+    <p>Twoje imie przed kliknięciem w przycisk: {{firstName + " " + secondName}}</p>
+    <button ion-button full color="secondary" (click)="submitForm()">Submit</button>
+  </form>
+</ion-content>
